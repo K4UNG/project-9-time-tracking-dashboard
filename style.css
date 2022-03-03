@@ -128,13 +128,11 @@ ul li:hover {
 }
 
 .bg {
-    height: 20%;
+    height: calc(20% + 2px);
     width: 100%;
     background-size: 35%;
     background-repeat: no-repeat;
     background-position: 95% 50%;
-    transform-origin: top;
-    transform: scaleY(calc(100% + 2px));
 }
 
 
