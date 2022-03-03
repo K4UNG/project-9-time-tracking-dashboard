@@ -323,7 +323,7 @@ ul li:hover {
     }
 
     nav ul li {
-        flex: 1 1 30%;
+        flex: 0 1 30%;
     }
 }
 
