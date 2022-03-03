@@ -213,7 +213,7 @@ ul li:hover {
     position: relative;
     overflow: hidden;
     transform-origin: bottom;
-    transform: translateY(3px) scaleY(100% + 3px);
+    transform: translateY(2px);
 }
 
 .filter {
@@ -351,9 +351,13 @@ ul li:hover {
         align-items: center;
     }
 
-    .filter {
-        display: none;
+    .bg {
+        background-size: 28%;
     }
+
+    /*-- .filter {
+        display: none;
+    } --*/
 
     /*-- .time {
         transform: translateY(2px) scaleY(100% + 2px);
