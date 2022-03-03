@@ -329,6 +329,7 @@ ul li:hover {
     main {
         grid-template-columns: 1fr;
         grid-template-rows: 1.5fr repeat(6, 1fr);
+        width: 90%;
     }
 
     .user-container {
