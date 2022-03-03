@@ -1,20 +1,21 @@
-// const daily = document.getElementById('daily');
-// const weekly = document.getElementById('weekly');
-// const monthly = document.getElementById('monthly');
 const buttons = document.querySelectorAll('nav li');
 const containers = document.querySelectorAll('.time');
 const order = ['Work', 'Play', 'Study', 'Exercise', 'Social', 'Self Care'];
 
 async function getData(containers, button) {
-    var data = await fetch('./data.json');
-    var times = await data.json();
+    let data = await fetch('./data.json');
+    let times = await data.json();
     let index = 0;
     containers.forEach(container => {
-        container.childNodes[5].innerHTML = times[index].timeframes[button.getAttribute('id')].current + 'hr';
-        container.childNodes[7].innerHTML = button.dataset.last + ' ' + times[index].timeframes[button.getAttribute('id')].previous + 'hr';
+        let current = times[index].timeframes[button.getAttribute('id')].current;
+        let previous = times[index].timeframes[button.getAttribute('id')].previous;
+        container.childNodes[5].childNodes[1].innerHTML =  current + ((current <= 1) ? 'hr' : 'hrs');
+        container.childNodes[5].childNodes[3].innerHTML = button.dataset.last + ' ' + previous + ((previous <= 1) ? 'hr' : 'hrs');
         index++;
     })
 }
+
+getData(containers, buttons[1]);
 
 buttons.forEach(button => {
     button.onclick = ()=> {
