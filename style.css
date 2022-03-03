@@ -212,7 +212,8 @@ ul li:hover {
     transition: background-color .2s ease;
     position: relative;
     overflow: hidden;
-    transform: translateY(2px) scaleY(100% + 2px);
+    transform-origin: bottom;
+    transform: translateY(3px) scaleY(100% + 3px);
 }
 
 .filter {
