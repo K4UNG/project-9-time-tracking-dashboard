@@ -321,6 +321,10 @@ ul li:hover {
         flex-direction: row;
         justify-content: space-evenly;
     }
+
+    nav ul li {
+        flex: 1 1 30%;
+    }
 }
 
 @media (max-width: 570px) {
