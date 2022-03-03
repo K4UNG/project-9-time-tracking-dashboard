@@ -133,6 +133,8 @@ ul li:hover {
     background-size: 35%;
     background-repeat: no-repeat;
     background-position: 95% 50%;
+    transform-origin: top;
+    transform: scaleY(1.05);
 }
 
 
@@ -213,7 +215,8 @@ ul li:hover {
     position: relative;
     overflow: hidden;
     transform-origin: bottom;
-    transform: translateY(2px);
+    /* transform: translateY(2px); */
+    top: 2px;
 }
 
 .filter {
@@ -254,9 +257,11 @@ ul li:hover {
     transition: transform .2s ease;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     transform: scale(1);
     filter: contrast(1000%);
+    outline: none;
 }
 
 .head img {
@@ -358,7 +363,7 @@ ul li:hover {
     }
 
     .bg {
-        background-size: 28%;
+        background-size: 25%;
     }
 
     /*-- .filter {

@@ -27,5 +27,15 @@ buttons.forEach(button => {
         getData(containers, button);
         
     }
+
+    button.onkeyup = ()=> {
+        buttons.forEach(link => {
+            link.classList.remove('active')
+        });
+
+        button.classList.add('active');
+        getData(containers, button);
+        
+    }
 });
 
