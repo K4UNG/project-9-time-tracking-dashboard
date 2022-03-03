@@ -128,7 +128,7 @@ ul li:hover {
 }
 
 .bg {
-    height: calc(20% + 2px);
+    height: calc(20% + 4px);
     width: 100%;
     background-size: 35%;
     background-repeat: no-repeat;
