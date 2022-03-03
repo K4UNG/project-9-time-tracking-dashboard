@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 .attribution { 
     font-size: 11px;
-    text-align: center; 
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    color: rgb(196, 196, 196);
 }
 .attribution a { 
     color: hsl(228, 45%, 44%);
@@ -12,4 +17,265 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    /*-- primary --*/
+    --blue: hsl(246, 80%, 60%);
+
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+
+    /*-- neutral --*/
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: rgba(57, 61, 102, 0.8);
+    --pale-blue: hsl(236, 100%, 87%);
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-dark-blue);
+    position: relative;
+    padding: 0 5vw;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+.user-container,
+.container {
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    color: white;
+    border: 1px solid var(--dark-blue)
+}
+
+.user p,
+li,
+.container p:last-of-type {
+    color: var(--pale-blue);
+}
+
+.active {
+    color: white;
+}
+
+.user-container {
+    grid-row: 1 / span 2;
+}
+
+.user {
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.user img {
+    width: 75px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.user p {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.user h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 2.6rem;
+}
+
+nav {
+    padding: calc(1.5rem - 7px) 1.5rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    list-style: none;
+}
+
+ul li {
+    margin: 7px 0;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+ul li:hover {
+    color: white;
+}
+
+.bg {
+    height: 20%;
+    width: 100%;
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
+
+
+/* ----- top background color ----- */
+
+
+.container:nth-child(2) {
+    background-color: var(--work);
+}
+
+.container:nth-child(3) {
+    background-color: var(--play);    
+}
+
+.container:nth-child(4) {
+    background-color: var(--study); 
+}
+
+.container:nth-child(5) {
+    background-color: var(--exercise);
+}
+
+.container:nth-child(6) {
+    background-color: var(--social);
+}
+
+.container:nth-child(7) {
+    background-color: var(--self-care);
+}
+
+
+/* ----- top background icons ----- */
+
+
+.container:nth-child(2) .bg {
+    background-image: url(images/icon-work.svg);
+}
+
+.container:nth-child(3) .bg {
+    background-image: url(images/icon-play.svg);
+}
+
+.container:nth-child(4) .bg {
+    background-image: url(images/icon-study.svg);
+}
+
+.container:nth-child(5) .bg {
+    background-image: url(images/icon-exercise.svg);
+}
+
+.container:nth-child(6) .bg {
+    background-image: url(images/icon-social.svg);
+}
+
+.container:nth-child(7) .bg {
+    background-image: url(images/icon-self-care.svg);
+}
+
+
+/* ---------- */
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.time {
+    background-color: var(--dark-blue);
+    width: calc(100% + 2px);
+    border-radius: 13px;
+    height: 80%;
+    padding: 1.5rem 1rem;
+    cursor: default;
+    transition: background-color .2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .2s ease;
+}
+
+.filter:hover {
+    background-color: var(--desaturated-blue);
+}
+
+.filter:hover + .head > .btn {
+    transform: scale(1);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: .8rem;
+    color: white;
+}
+
+.btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transform: scale(.7);
+    transform-origin: center;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    transition: transform .2s ease;
+}
+
+.btn:hover {
+    transform: scale(1);
+    filter: contrast(1000%);
+}
+
+.head img {
+    width: 100%;
+}
+
+.time h2 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-top: 1.3rem;
+}
+
+.time > p {
+    font-weight: 400;
+    margin-top: .5rem;
+    font-size: .7rem;
+}
+
+.container h2,
+.container p,
+.button {
+    position: relative;
+    pointer-events: none;
+    z-index: 5;
 }
